@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\22972804830\\Documents\\Projetos Csharp\\AulaD1\\Senai.Sistema.Carfel.ProjetoFinalDezoito\\Senai.Sistema.Carfel.ProjetoFinalDezoito.csproj",
+  "TargetFramework": "netcoreapp2.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "MVC-2.1",
+    "LanguageVersion": "2.1",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-2.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+/* ver img e ver o width */
+.uber1 {
+    height: 33%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.ub1sobre img {
+    margin: 10% 0% 0% 15%;
+}
+
+.ub1sobre h2 {
+    margin: 1% 0% 5% 50%;
+    font-size: 2.5em;
+
+}
+
+.ub2sobre img {
+    margin: 10% 0% 0% 15%;
+}
+
+.ub2sobre h2 {
+    margin: 1% 0% 5% 50%;
+    font-size: 2.5em;
+
+}
+
+.skipan {
+    height: 250px;
+    width: 250px;
+    margin: 1% 0% 1% 5%;
+}
+
+.uber2 {
+    background-color: #E5F5F6;
+    height: 33%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1em;
+}
+
+.uber3 {
+    height: 34%;
+    width: 100vw;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.uber3 h2 {
+    font-size: 2.5em;
+    margin: 1% 0% 1% 40%;
+}
+
+.uber3 p {
+    margin: 0 5% 0 5%;
+}
+
+.uber3 img {
+    margin: 1% 0% -5px 20%;
+}

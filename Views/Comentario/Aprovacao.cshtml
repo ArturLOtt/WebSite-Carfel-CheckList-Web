@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "Carfel - Area do Administrador";
+    Layout = "MasterPagePrincipal";
+}
+
+<h1>Formulário de Cadastro de Comentarios</h1>
+
+<form method="POST" action="/Tarefa/Aprovacao">
+
+<!-- 
+    <label>Nome
+        <input type="text" name="nome" required="true">
+    </label> 
+-->
+
+    <textarea>Descrição</textarea>
+
+    <input type="submit" value="Aprovar Comentarios">
+</form>
+
+
+
+@ViewBag.Mensagem

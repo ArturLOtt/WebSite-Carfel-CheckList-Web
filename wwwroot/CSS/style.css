@@ -1,0 +1,274 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 70vh;
+    width: 500px;
+    border-top: 1px solid #086A7A;
+    border-bottom: 1px solid #086A7A;
+}
+
+.azulao {
+    background-color: #086A7A;
+    height: 50%;
+    width: 100vw;
+}
+
+.azulao nav {
+    padding: 1% 0 0 1%;
+}
+
+.azulao nav ul {
+    display: flex;
+    flex-direction: row; 
+    font-size: 1.5em; 
+    list-style: none;
+}
+
+.azulao nav a {
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    color: black;
+    padding: 0% 0% 0% 0%;
+}
+
+.azulao nav p {
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    color: #06484F;
+    padding: 0% 5% 0% 5%;
+    font-weight: 800;
+}
+
+
+
+.azulao h1 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: white;
+    font-size: 5em;
+    padding: 5% 0% 0% 5%;
+}
+
+/* 
+.clock {
+    height: 316px;
+    width: 259px;
+    background: #fff;
+    border-color: black;
+    border: solid 2px;
+    transform: rotate(5% 5% 5%);
+    z-index: 2;
+    transform: translateY(-40%);
+    margin: 0% 0 0% 70%;
+} */
+
+.clock img {
+    z-index: 2;
+}
+
+
+.clock{
+    position: absolute;
+    left: 70%;
+    /* bottom: 48%; */
+    z-index: 2;
+    background: #fff;
+    border-color: black;
+    border: solid 2px;
+    top: 13%;
+}
+
+
+
+.sec {
+    background-color: rebeccapurple;
+    position: relative;
+    transform-origin: bottom;
+    animation: sec_anim 10s linear infinite;
+    border: none;
+    height: 72px;
+    width: 0px;
+    left: 79%;
+    bottom: 43%;
+    z-index: 3;
+
+}
+
+
+.sec img {
+    width: 44px;
+    height: 70px;
+    left: 41%;
+}
+
+    
+    /* 
+    .sec{
+        position: absolute;
+        left: 41%;
+        bottom: 12px;
+        z-index: 3;
+        animation: sec_anim 10s linear infinite;
+        transform-origin: bottom;
+    }
+
+    .sec img {
+        width: 57px;
+    } */
+
+    
+@keyframes sec_anim {
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+    } 
+
+
+.azuzinho {
+    background-color: #E5F5F6;
+    height: 50%;
+    width: 100vw;
+    
+}
+
+
+
+.utwisi {
+    height: 144px;
+    width: 500px;
+    padding: 4% 0px 0px 11%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: .9em;
+}
+
+#carfectellus {
+    font-weight: 800;
+    padding: 4% 0px 0px 15%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+
+.upper {
+    background-color: #086A7A;
+    height: 150px;
+    width: 100vw;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    /* color: black;
+    list-style-type: none; */
+    padding: 4% 0px 0px 0px;
+}
+
+
+
+
+
+
+.upper .upper-list-1 ul {
+    list-style: none;
+    display: flex;
+    /* margin: 25% 0 0 0; */
+}
+.upper .upper-list-2 ul {
+    list-style: none;
+    display: flex;
+    /* margin: 25% 0 0 0; */
+}
+
+
+.upper ul a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    padding: 0% 4% 0% 25%;
+}
+
+
+
+
+.ot1 ul {
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    margin: 0;
+    /* padding: 0; */
+    text-align: center;
+    /* margin: 25% 0 0 0; */
+   
+}
+
+.ot1 ul li {
+    position: relative;
+    list-style: none;
+    float: left;
+}
+.ot1 ul li a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: width 0.5s;
+    box-sizing: border-box;
+    padding: 0;
+}
+.ot1 ul li:hover a {
+    width: 120px;
+
+}
+.ot1 .fab {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #fff;
+    border-right: 2px solid #086A7A;
+}
+.ot1 ul li a span {
+    color: #fff;
+    padding-left: 10px;
+}
+.ot1 ul li:nth-child(1) a {
+    background: #3b5999;
+}
+.ot1 ul li:nth-child(2) a {
+    background: #55acee;
+}
+.ot1 ul li:nth-child(3) a {
+    background: #dd4b39;
+}
+.ot1 ul li:nth-child(4) a {
+    background: #0077b5;
+}
+.ot1 ul li:nth-child(5) a {
+    background: #e4405f;
+}
+
+/* .upper-list-2 {
+    margin: 25% 0 0 0;
+} */
+
+.bottower {
+    background-color: #06484F;
+    height: 150px;
+    width: 100vw; 
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.bottower ul {
+    margin: 0 0 0 10px;
+    list-style: none;
+    padding: 60px 0 0 0;
+}
+

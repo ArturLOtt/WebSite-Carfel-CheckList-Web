@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "Carfel - Cadastro de Comentarios";
+    Layout = "MasterPagePrincipal";
+}
+
+<h1>Formulário de Cadastro de Tarefas</h1>
+
+<form method="POST" action="/Tarefa/Cadastrar">
+
+<!-- 
+    <label>Nome
+        <input type="text" name="nome" required="true">
+    </label> 
+-->
+
+    <textarea>Descrição</textarea>
+
+    <input type="submit" value="Cadastrar Tarefa">
+</form>
+
+
+
+@ViewBag.Mensagem

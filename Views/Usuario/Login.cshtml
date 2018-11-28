@@ -1,0 +1,20 @@
+@{
+    ViewBag.Title = "Carfel - Login";
+    Layout = "MasterPagePrincipal";
+}
+
+<link href="/CSS/login.css" rel="stylesheet" type="text/css">
+<h1>Login</h1>
+
+<form action="/Usuario/Login" method="POST">
+    <label>Email
+        <input type="text" name="email" required="true">
+    </label>
+    <label>Senha
+        <input type="password" name="senha" required="true">
+    </label>
+
+    <input type="submit" value="Entrar">
+</form>
+
+@ViewBag.Mensagem

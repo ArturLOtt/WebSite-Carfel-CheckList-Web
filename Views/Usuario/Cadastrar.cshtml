@@ -1,0 +1,31 @@
+@{
+    ViewBag.Title = "Carfel -- Cadastrar Usuário";
+    Layout = "MasterPagePrincipal";
+}
+
+<h1>Formulario de Cadastro</h1>
+
+<form action="/Usuario/Cadastrar" method="POST">
+    <label>Nome
+        <input type="text" name="nome">
+    </label>
+
+    <label>Email
+        <input type="email" name="email">
+    </label>
+
+    <label>Senha
+        <input type="password" name="senha">
+    </label>
+
+    <label> Tipo de Usuário
+        <select name="tipo"> 
+            <option value="usuario">Usuário</option>
+            <option value="admin">Administrador</option>
+        </select>
+    </label>
+
+    <input type="submit" value="Enviar">
+</form>
+
+@ViewBag.Mensagem
