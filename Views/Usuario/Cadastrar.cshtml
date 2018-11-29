@@ -7,22 +7,15 @@
 
 <form action="/Usuario/Cadastrar" method="POST">
     <label>Nome
-        <input type="text" name="nome">
+        <input type="text" name="nome" required>
     </label>
 
     <label>Email
-        <input type="email" name="email">
+        <input type="email" name="email" required>
     </label>
 
     <label>Senha
-        <input type="password" name="senha">
-    </label>
-
-    <label> Tipo de Usuário
-        <select name="tipo"> 
-            <option value="usuario">Usuário</option>
-            <option value="admin">Administrador</option>
-        </select>
+        <input type="password" name="senha" required>
     </label>
 
     <input type="submit" value="Enviar">

@@ -1,0 +1,55 @@
+@using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
+
+@{
+    ViewBag.Title = "Carfel -- Area do Administrador";
+    Layout = "MasterPagePrincipal";
+}
+
+<h1>Area do Administrador</h1>
+
+<form method="POST" action="/Usuario/Administrador">
+
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Data de nascimento</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
+        {
+            <tr>
+                <td>
+                    @usuario.Nome
+                </td>
+                <td>
+                    @usuario.Email
+                </td>
+                <td>
+                    @usuario.DataNascimento.ToShortDateString()
+                </td>
+                <td>
+                    <a href="/Usuario/Excluir?id=@usuario.ID">Excluir</a>
+                    <a href="/Usuario/Editar?id=@usuario.ID">Editar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* @UsuarioModel razor  *@
+
+<select>
+    @foreach (UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
+    {
+        <option>
+            @usuario.Nome
+        </option>
+    }
+</select>
+
+
+
+@ViewBag.Mensagem

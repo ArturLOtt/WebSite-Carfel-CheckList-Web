@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-faq.css">
+    <link rel="stylesheet" href="css/style-form.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+</head>
+
+@{
+    ViewBag.Title = "Carfel -- FAQ";
+    Layout = "MasterPagePrincipal";
+}
+
+
+
+<body>
+
+
+    <main class="main-help">
+
+        <div class="como-ajudar">
+
+            <div class="wiseau">
+                <h2>Como podemos te ajudar?</h2>
+                <p> &emsp;&emsp;Comece selecionando um dos botões a seguir, ou se preferir, nos mande uma mensagem que responderemos
+                    assim que possível!</p>
+            </div>
+
+
+            <form>
+                <div class="primeira-ajuda">
+                    <input class="botaozinho ajuda" type="submit" value="VENDAS">
+                    <input class="botaozinho ajuda" type="submit" value="AJUDA">
+                    <input class="botaozinho ajuda" type="submit" value="SUPORTE">
+
+                </div>
+
+                <div class="segunda-ajuda">
+                    <textarea readonly="yes" class="formul" placeholder="
+                    1. LOREM: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                    2. LOREM: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+                    "></textarea>
+                </div>
+
+
+            </form>
+
+
+            <div class="wiseau">
+                <span>Esse artigo foi útil?</span>
+
+
+                <form class="feedback">
+                    <input class="botaozinho ajuda" type="submit" value="SIM">
+                    <input class="botaozinho ajuda" type="submit" value="NÂO">
+                </form>
+            </div>
+
+
+        </div>
+
+
+        <div id="chat">
+            <header>
+                <nav class="flex-container">
+                    <div class="perfil flex-container">
+                        <div class="perfil-img">
+
+                        </div>
+                        <!-- fim perfil-img-->
+                        <div class="perfil-dados">
+                            <span class="perfil-nome">Cliente Anônimo</span>
+                            <span class="perfil-status">Online</span>
+                        </div>
+                        <!-- fim perfil-dados-->
+                    </div>
+                    <!-- fim perfil-->
+                    <div class="aksoes">
+
+                    </div>
+                    <!-- fim aksoes-->
+                </nav>
+            </header>
+            <main class="flex-container">
+                <div class="chat-msg chat-msg-enviada">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <span class="chat-msg-horario">00:05</span>
+                </div>
+                <!-- fim div chat-msg-->
+                <div class="chat-msg chat-msg-recebida">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <span class="chat-msg-horario">00:10</span>
+                </div>
+                <!-- fim div chat-msg-->
+                <div class="chat-msg chat-msg-enviada">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                    <span class="chat-msg-horario">00:30</span>
+                </div>
+                <!-- fim div chat-msg-->
+            </main>
+            <footer class="flex-container">
+
+                <form class="mensagem">
+                    <textarea></textarea>
+                </form>
+
+            </footer>
+        </div>
+
+
+
+    </main>
+
+</body>
+
+</html>

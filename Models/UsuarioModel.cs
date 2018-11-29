@@ -8,8 +8,8 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Models {
         public string Senha { get; set; }
 
         public int Id { get; set; }
-        
-        public string Tipo { get; set; } //(usuário/admin)
+
+        public bool Cliente { get; set; } //(cliente/admin)
 
         public UsuarioModel()
         {

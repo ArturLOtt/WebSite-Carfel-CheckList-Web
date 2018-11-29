@@ -1,23 +1,102 @@
+@using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
+
 @{
-    ViewBag.Title = "Carfel - Cadastro de Comentarios";
-    Layout = "MasterPagePrincipal";
+ViewBag.Title = "Carfel - Cadastro de Comentarios";
+Layout = "MasterPagePrincipal";
 }
 
-<h1>Formulário de Cadastro de Tarefas</h1>
+<h1>Area dos Comentários</h1>
 
-<form method="POST" action="/Tarefa/Cadastrar">
 
-<!-- 
-    <label>Nome
-        <input type="text" name="nome" required="true">
-    </label> 
--->
+<form method="POST" action="/Comentario/Cadastrar">
+    <textarea>@usuario.Nome</textarea>
+</form>
 
-    <textarea>Descrição</textarea>
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Data de nascimento</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
+            {
+            <tr>
+                <td>
+                    @usuario.Nome
+                </td>
+                <td>
+                    @usuario.Email
+                </td>
+                <td>
+                    @usuario.DataNascimento.ToShortDateString()
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
 
-    <input type="submit" value="Cadastrar Tarefa">
+
+
+
+<form action="/Comentario/Cadastrar" method="POST">
+    <label>Fazer um novo comentario
+        <input type="text" name="depoimento" required>
+    </label>
+
+    <input type="submit" value="Enviar">
 </form>
 
 
 
 @ViewBag.Mensagem
+
+
+
+
+<h3>Listagem de usuários</h3>
+
+@TempData["Mensagem"]
+
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>E-mail</td>
+            <td>Data de nascimento</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
+            {
+            <tr>
+                <td>
+                    @usuario.Nome
+                </td>
+                <td>
+                    @usuario.Email
+                </td>
+                <td>
+                    @usuario.DataNascimento.ToShortDateString()
+                </td>
+                <td>
+                    <a href="/Usuario/Excluir?id=@usuario.ID">Excluir</a>
+                    <a href="/Usuario/Editar?id=@usuario.ID">Editar</a>
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
+
+@* @UsuarioModel razor *@
+
+<select>
+    @foreach (UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
+        {
+        <option>
+            @usuario.Nome
+        </option>
+        }
+</select>
