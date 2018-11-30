@@ -14,7 +14,6 @@
         <tr>
             <td>Nome</td>
             <td>E-mail</td>
-            <td>Data de nascimento</td>
         </tr>
     </thead>
     <tbody>
@@ -28,18 +27,15 @@
                     @usuario.Email
                 </td>
                 <td>
-                    @usuario.DataNascimento.ToShortDateString()
-                </td>
-                <td>
-                    <a href="/Usuario/Excluir?id=@usuario.ID">Excluir</a>
-                    <a href="/Usuario/Editar?id=@usuario.ID">Editar</a>
+                    <a href="/Usuario/Excluir?id=@usuario.Id">Excluir</a>
+                    <a href="/Usuario/Editar?id=@usuario.Id">Editar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-@* @UsuarioModel razor  *@
+<!-- @* @UsuarioModel razor  *@ -->
 
 <select>
     @foreach (UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)

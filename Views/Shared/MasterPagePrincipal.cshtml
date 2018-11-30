@@ -6,15 +6,17 @@
     <title>| |</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/CSS/style.css" rel="stylesheet" type="text/css">
+     @RenderSection("styles", required: false)
+    <!-- <link href="/JS/style.js" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
 </head>
 <body>
     <!--<a href="/Usuario/Listar">Listar</a>
     <a href="/Usuario/Cadastro">Cadastrar</a>
     <a href="/Usuario/Login">Login</a>
      <a href=""></a> -->
-
-
-
 
     <header>
 
@@ -23,49 +25,53 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#">Página Principal</a>
+                        <a href="\Main\princip">
+                            Página Principal</a>
                     </li>
                     <p> | </p>
                     <li>
-                        <a href="C:\Users\22972804830\Documents\web\carfel\formulario.html">
+                        <a href="\Main\formulario">
                             Formulário de Contato</a>
                     </li>
                     <p> | </p>
                     <li>
-                        <a href="C:\Users\22972804830\Documents\web\carfel\about.html">
+                        <a href="\Main\about">
                             Sobre Nós</a>
                     </li>
                     <p> | </p>
                     <li>
-                        <a href="C:\Users\22972804830\Documents\web\carfel\faq.html">
+                        <a href="\Main\faq">
                             Fale Conosco</a>
                     </li>
                     <p> | </p>
                     <li>
-                        <a href="#">
+                        <a href="\Usuario\Login">
                             Login</a>
                     </li>
                     <p> | </p>
                     <li>
-                        <a href="#">
+                        <a href="\Comentario\Cadastrar">
                             Comentarios</a>
                     </li>
                     <p> | </p>
-                    <br>
+                     <li>
+                        <a href="\Usuario\Administrador">
+                            <img src="logo.png" alt="adm"></a>
+                    </li>
 
 
 
                 </ul>
             </nav>
-            <h1>Página Principal</h1>
+            <h1> | | </h1>
             <div class="clock">
                 <a href="#">
-                    <img src="imagens/logo-ativo1.png" alt="logo da empresa">
+                    <img src="/imagens/logo-ativo1.png" alt="logo da empresa">
                 </a>
 
             </div>
             <div class="sec">
-                <img src="imagens/logo-ativo3.png" class="sec_img" alt="logo da empresa">
+                <img src="/imagens/logo-ativo3.png" class="sec_img" alt="logo da empresa">
             </div>
 
         </div>
@@ -100,7 +106,7 @@
 
                 <ul>
                     <li>
-                        <a href="#">Página Principal</a>
+                        <a href="\Main\princip">Página Principal</a>
 
                     </li>
 
@@ -164,7 +170,7 @@
 
                 <ul>
                     <li>
-                        <a href="#">FAQ</a>
+                        <a href="\Main\faq">FAQ</a>
 
                     </li>
 

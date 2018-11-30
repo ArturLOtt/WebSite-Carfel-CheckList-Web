@@ -9,7 +9,7 @@ Layout = "MasterPagePrincipal";
 
 
 <form method="POST" action="/Comentario/Cadastrar">
-    <textarea>@usuario.Nome</textarea>
+       <!-- <textarea>//usuario</textarea> -->
 </form>
 
 <table>
@@ -29,9 +29,6 @@ Layout = "MasterPagePrincipal";
                 </td>
                 <td>
                     @usuario.Email
-                </td>
-                <td>
-                    @usuario.DataNascimento.ToShortDateString()
                 </td>
             </tr>
             }
@@ -79,11 +76,8 @@ Layout = "MasterPagePrincipal";
                     @usuario.Email
                 </td>
                 <td>
-                    @usuario.DataNascimento.ToShortDateString()
-                </td>
-                <td>
-                    <a href="/Usuario/Excluir?id=@usuario.ID">Excluir</a>
-                    <a href="/Usuario/Editar?id=@usuario.ID">Editar</a>
+                    <a href="/Usuario/Excluir?id=@usuario.Id">Excluir</a>
+                    <a href="/Usuario/Editar?id=@usuario.Id">Editar</a>
                 </td>
             </tr>
             }

@@ -8,13 +8,6 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
 {
     public class ComentarioController : Controller
     {
-        
-
-// using System;
-// using System.IO;
-// using Microsoft.AspNetCore.Http;
-
-
         public static UsuarioModel UsuarioAutenticado { get; private set; }
 
         int contador = 0;
@@ -25,36 +18,24 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
                 return RedirectToAction ("Login", "Usuario");
             }
             return View ();
-
         }
 
         [HttpPost]
         public IActionResult Cadastrar (IFormCollection form) {
-            ComentarioModel tarefa = new ComentarioModel ();
-            tarefa.Id = contador + 1;
-            tarefa.Nome = form["nome"];
-            tarefa.Descricao = form["descricao"];
-            tarefa.Tipo = form["tipo"];
-            // tarefa.usuario;
-            tarefa.DataCriacao = DateTime.Now;
-            tarefa.Aprovado = false;
+            ComentarioModel comentario = new ComentarioModel ();
+            comentario.Id = contador + 1;
+            comentario.usuario = UsuarioAutenticado;
+            comentario.Descricao = form["descricao"];
+            comentario.DataCriacao = DateTime.Now;
+            comentario.Aprovado = false;
 
-            using (StreamWriter sw = new StreamWriter ("tarefaDB.txt", true)) {
-                sw.WriteLine ($"{tarefa.Id};{tarefa.Nome};{tarefa.Descricao};{tarefa.Tipo};{tarefa.IdUsuario};{tarefa.DataCriacao}");
+            using (StreamWriter sw = new StreamWriter ("comentarioDB.txt", true)) {
+                sw.WriteLine ($"{comentario.Id};{comentario.usuario};{comentario.Descricao};{comentario.DataCriacao};{comentario.Aprovado}");
             }
 
-            ViewBag.Mensagem = "Tarefa cadastrada";
+            ViewBag.Mensagem = "Comentario cadastrada";
 
             return View ();
-
         }
-
-    }
-}
-
-
-
-
-
     }
 }

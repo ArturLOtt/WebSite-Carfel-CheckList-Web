@@ -22,21 +22,21 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Models {
             this.Senha = senha;
         }
 
-        public UsuarioModel(string nome, string email, string senha, string tipo)
+        public UsuarioModel(string nome, string email, string senha, bool cliente)
         {
             this.Nome = nome;
             this.Email = email;
             this.Senha = senha;
-            this.Tipo = Tipo;
+            this.Cliente = cliente;
         }
 
-        public UsuarioModel(int id, string nome, string email, string senha, string tipo)
+        public UsuarioModel(int id, string nome, string email, string senha, bool cliente)
         {
             this.Id = id;
             this.Nome = nome;
             this.Email = email;
             this.Senha = senha;
-            this.Tipo = Tipo;
+            this.Cliente = cliente;
         }
 
     }
