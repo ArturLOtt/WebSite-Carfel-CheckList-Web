@@ -24,13 +24,13 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
         public IActionResult Cadastrar (IFormCollection form) {
             ComentarioModel comentario = new ComentarioModel ();
             comentario.Id = contador + 1;
-            comentario.usuario = UsuarioAutenticado;
+            comentario.Usuario = UsuarioAutenticado;
             comentario.Descricao = form["descricao"];
             comentario.DataCriacao = DateTime.Now;
             comentario.Aprovado = false;
 
             using (StreamWriter sw = new StreamWriter ("comentarioDB.txt", true)) {
-                sw.WriteLine ($"{comentario.Id};{comentario.usuario};{comentario.Descricao};{comentario.DataCriacao};{comentario.Aprovado}");
+                sw.WriteLine ($"{comentario.Id};{comentario.Usuario.Nome};{comentario.Descricao};{comentario.DataCriacao};{comentario.Aprovado}");
             }
 
             ViewBag.Mensagem = "Comentario cadastrada";

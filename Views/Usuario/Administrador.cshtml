@@ -1,5 +1,16 @@
 @using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
 
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
 @{
     ViewBag.Title = "Carfel -- Area do Administrador";
     Layout = "MasterPagePrincipal";

@@ -1,8 +1,24 @@
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
 @{
     ViewBag.Title = "Carfel -- Cadastrar Usuário";
     Layout = "MasterPagePrincipal";
 }
 
+@section styles {
+    <link rel="stylesheet" href="/CSS/style-cadastrar.css">
+}
+
+<main>
 <h1>Formulario de Cadastro</h1>
 
 <form action="/Usuario/Cadastrar" method="POST">
@@ -22,3 +38,6 @@
 </form>
 
 @ViewBag.Mensagem
+
+</main>
+

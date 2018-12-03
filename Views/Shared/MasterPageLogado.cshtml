@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>| |</title>
+    <title>| Check Point - Bem-Vindo @ViewBag.UsuarioLogado |</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/CSS/style.css" rel="stylesheet" type="text/css">
      @RenderSection("styles", required: false)
@@ -25,7 +25,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="\Main\princip">
+                        <a href="\Main\principal">
                             Página Principal</a>
                     </li>
                     <p> | </p>
@@ -45,8 +45,8 @@
                     </li>
                     <p> | </p>
                     <li>
-                        <a href="\Usuario\Login">
-                            Login</a>
+                        <a href="\Main\Principal">
+                            @ViewBag.UsuarioLogado</a>
                     </li>
                     <p> | </p>
                     <li>
@@ -56,7 +56,7 @@
                     <p> | </p>
                      <li>
                         <a href="\Usuario\Administrador">
-                            <img src="logo.png" alt="adm"></a>
+                            <img src="/imagens/logo.png" alt="adm" style="height:15px; width: 15px;"></a>
                     </li>
 
 
@@ -76,7 +76,6 @@
 
         </div>
 
-
         <div class="azuzinho">
 
             <p class="utwisi">
@@ -89,15 +88,9 @@
 
         </div>
 
-
-
-
     </header>
 
-
     @RenderBody()
-
-
 
     <footer>
         <div class="upper">
@@ -203,9 +196,6 @@
         </div>
 
     </footer>
-
-
-
 
 </body>
 </html>

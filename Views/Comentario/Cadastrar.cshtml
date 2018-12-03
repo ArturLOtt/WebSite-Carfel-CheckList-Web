@@ -21,17 +21,6 @@ Layout = "MasterPagePrincipal";
         </tr>
     </thead>
     <tbody>
-        @foreach(UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
-            {
-            <tr>
-                <td>
-                    @usuario.Nome
-                </td>
-                <td>
-                    @usuario.Email
-                </td>
-            </tr>
-            }
     </tbody>
 </table>
 
@@ -66,31 +55,12 @@ Layout = "MasterPagePrincipal";
         </tr>
     </thead>
     <tbody>
-        @foreach(UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
-            {
-            <tr>
-                <td>
-                    @usuario.Nome
-                </td>
-                <td>
-                    @usuario.Email
-                </td>
-                <td>
-                    <a href="/Usuario/Excluir?id=@usuario.Id">Excluir</a>
-                    <a href="/Usuario/Editar?id=@usuario.Id">Editar</a>
-                </td>
-            </tr>
-            }
+        
     </tbody>
 </table>
 
 @* @UsuarioModel razor *@
 
 <select>
-    @foreach (UsuarioModel usuario in ViewData["Usuarios"] as List<UsuarioModel>)
-        {
-        <option>
-            @usuario.Nome
-        </option>
-        }
+    
 </select>

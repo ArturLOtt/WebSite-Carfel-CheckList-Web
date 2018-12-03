@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>| Check Point - Bem-Vindo @ViewBag.UsuarioLogado |</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/CSS/style.css" rel="stylesheet" type="text/css">
+     @RenderSection("styles", required: false)
+    <!-- <link href="/JS/style.js" rel="stylesheet" type="text/css"> -->
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+</head>
+<body>
+    <!--<a href="/Usuario/Listar">Listar</a>
+    <a href="/Usuario/Cadastro">Cadastrar</a>
+    <a href="/Usuario/Login">Login</a>
+     <a href=""></a> -->
+
+    <header>
+
+        <div class="azulao">
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="\Main\principal">
+                            Página Principal</a>
+                    </li>
+                    <p> | </p>
+                    <li>
+                        <a href="\Main\formulario">
+                            Formulário de Contato</a>
+                    </li>
+                    <p> | </p>
+                    <li>
+                        <a href="\Main\about">
+                            Sobre Nós</a>
+                    </li>
+                    <p> | </p>
+                    <li>
+                        <a href="\Main\faq">
+                            Fale Conosco</a>
+                    </li>
+                    <p> | </p>
+                    <li>
+                        <a href="\Main\Principal">
+                            @ViewBag.UsuarioLogado</a>
+                    </li>
+                    <p> | </p>
+                    <li>
+                        <a href="\Comentario\Cadastrar">
+                            Comentarios</a>
+                    </li>
+                    <p> | </p>
+                     <li>
+                        <a href="\Usuario\Administrador">
+                            <img src="/imagens/logo.png" alt="adm" style="height:15px; width: 15px;"></a>
+                    </li>
+
+
+
+                </ul>
+            </nav>
+            <h1> | | </h1>
+            <div class="clock">
+                <a href="#">
+                    <img src="/imagens/logo-ativo1.png" alt="logo da empresa">
+                </a>
+
+            </div>
+            <div class="sec">
+                <img src="/imagens/logo-ativo3.png" class="sec_img" alt="logo da empresa">
+            </div>
+
+        </div>
+
+        <div class="azuzinho">
+
+            <p class="utwisi">
+                &emsp;&emsp;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                <br> &emsp;&emsp; Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                ut aliquip ex ea commodo consequat.
+            </p>
+            <p id="carfectellus">
+                Telefone: +55 XX 4321 9876 </p>
+
+        </div>
+
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <div class="upper">
+
+            <div class="upper-list-1">
+
+                <ul>
+                    <li>
+                        <a href="\Main\princip">Página Principal</a>
+
+                    </li>
+
+                    <li>
+                        <a href="#">Termos de Uso</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="ot1">
+
+
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+
+                            <span>Twitter</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-google-plus-g" aria-hidden="true"></i>
+                            <span>Google+</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span>Linkedin</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+            <div class="upper-list-2">
+
+
+
+                <ul>
+                    <li>
+                        <a href="\Main\faq">FAQ</a>
+
+                    </li>
+
+                    <li>
+                        <a href="#">Política de Privacidade</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="bottower">
+            <ul>
+                <li>
+                    Telefone: +55 XX 4321 9876
+                </li>
+                <li>
+                    Endereço: Rua Barão de Limeira, 428, São Paulo, SP, Brasil
+                </li>
+                <li>
+                    © 2018 All rights Reserved
+                </li>
+
+            </ul>
+
+
+        </div>
+
+    <p>Sair</p>
+
+    </footer>
+
+</body>
+</html>

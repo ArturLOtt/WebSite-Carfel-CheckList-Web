@@ -1,23 +1,39 @@
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
 @{
     ViewBag.Title = "Carfel - Login";
     Layout = "MasterPagePrincipal";
 }
 
-<link href="/CSS/login.css" rel="stylesheet" type="text/css">
+@section styles {
+    <link rel="stylesheet" href="/CSS/login.css" type="text/css">
+}
+
+<main>
 <h1>Login</h1>
 
 <form action="/Usuario/Login" method="POST">
     <label>Email
-        <input type="text" name="email" required="true">
+        <input type="text" name="email" required="true" placeholder="Insira seu email">
     </label>
     <label>Senha
-        <input type="password" name="senha" required="true">
+        <input type="password" name="senha" required="true" placeholder="Insira sua senha">
     </label>
 
     <input type="submit" value="Entrar">
-    <a href="#">
+    <a href="\Usuario\Cadastrar">
         <p>Cadastro de Usuario</p>
     </a>
 </form>
+</main>
 
 @ViewBag.Mensagem

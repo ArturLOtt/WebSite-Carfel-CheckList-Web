@@ -29,10 +29,9 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
                 sw.WriteLine ($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};{usuario.Cliente};");
 
             }
+
             ViewBag.Mensagem = "Usuário Cadastrado";
-            return RedirectToAction ("Login"
-                // "Index", "Tarefa"
-                );
+            return RedirectToAction ("Login");
         }
 
         [HttpGet]
@@ -42,17 +41,15 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
 
         [HttpPost]
         public IActionResult Login (IFormCollection form) {
-            UsuarioModel usuario = new UsuarioModel ();
-            usuario.Email = form["email"];
-            usuario.Senha = form["senha"];
+            UsuarioModel usuario = new UsuarioModel (email: form["email"], senha:form["senha"]);
 
             using (StreamReader sr = new StreamReader ("usuarioDB.txt")) {
                 while (!sr.EndOfStream) {
                     string[] linha = sr.ReadLine ().Split (";");
 
-                    if (linha[1] == usuario.Email && linha[2] == usuario.Senha) {
+                    if (linha[2] == usuario.Email && linha[3] == usuario.Senha) {
                         HttpContext.Session.SetString ("emailUsuario", usuario.Email);
-                        return RedirectToAction ("Cadastrar", "Tarefa");
+                        return RedirectToAction ("Cadastrar", "Comentario");
                     }
                 }
             }
@@ -62,5 +59,97 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
             return View ();
         }
 
+
+    //     [HttpPost]
+    //     public IActionResult Login(IFormCollection form){
+    //         UsuarioModel usuario = new UsuarioModel( email: form["email"], senha: form["senha"]);
+
+    //         UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+    //         UsuarioModel usuarioModel = usuarioRepositorio.EmailSenha(usuario.Email, usuario.Senha);
+
+    //         if(usuarioModel != null){
+    //             if(usuarioModel.Email.Contains("admin@carfel.com")){
+    //             HttpContext.Session.SetString("idUsuario", usuarioModel.Id.ToString());
+    //             HttpContext.Session.SetString("emailUsuario", usuarioModel.Email.ToString());
+    //             HttpContext.Session.SetString("nomeUsuario", usuarioModel.Nome.ToString());
+    //             HttpContext.Session.SetString("tipoUsuario", usuarioModel.Administrador.ToString());
+        
+    //             usuarioModel.Administrador = true;
+    //             return RedirectToAction ("IndexADM", "HomeADM");
+    //         }
+    //             HttpContext.Session.SetString("idUsuario", usuarioModel.Id.ToString());
+    //             HttpContext.Session.SetString("emailUsuario", usuarioModel.Email.ToString());
+    //             HttpContext.Session.SetString("nomeUsuario", usuarioModel.Nome.ToString());
+
+    //             ViewBag.LoginSucesso = "Login Efetuado";
+                
+    //             return RedirectToAction ("Index", "Home");
+    //         }else{
+    //             ViewBag.LoginFalha = "Acesso inválido";
+    //         }
+            
+    //         return View();
+    //     }
+
+
+
+
+
+
+    
+
+
+    //     [HttpPost]
+    //     public IActionResult LoginAdmin(IFormCollection form){
+    //         UsuarioModel usuario = new UsuarioModel( email: form["email"], senha: form["senha"]);
+
+    //         UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+    //         UsuarioModel usuarioModel = usuarioRepositorio.EmailSenha(usuario.Email, usuario.Senha);           
+
+    //         if(usuarioModel != null){
+    //             if(usuarioModel.Email.Contains("admin@carfel.com")){
+    //             HttpContext.Session.SetString("idUsuario", usuarioModel.Id.ToString());
+    //             HttpContext.Session.SetString("emailUsuario", usuarioModel.Email.ToString());
+    //             HttpContext.Session.SetString("nomeUsuario", usuarioModel.Nome.ToString());
+                
+    //             usuarioModel.Administrador = true;
+    //             return RedirectToAction ("IndexADM", "HomeADM");
+    //         }
+    //             HttpContext.Session.SetString("idUsuario", usuarioModel.Id.ToString());
+    //             HttpContext.Session.SetString("emailUsuario", usuarioModel.Email.ToString());
+    //             HttpContext.Session.SetString("nomeUsuario", usuarioModel.Nome.ToString());
+
+    //             ViewBag.LoginSucesso = "Login Efetuado";
+                
+    //             return RedirectToAction ("Index", "Home");
+    //         }else{
+    //             ViewBag.LoginFalha = "Acesso inválido";
+    //         }
+            
+    //         return View();
+    //     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [HttpGet]
+        public IActionResult Deslogar(){
+            HttpContext.Session.Clear();
+            return RedirectToAction ("Principal");
+        }
+
     }
+
 }
