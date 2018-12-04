@@ -7,11 +7,9 @@ C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.Proje
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Senai.Sistema.Carfel.ProjetoFinalDezoito.TagHelpers.input.cache
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Senai.Sistema.Carfel.ProjetoFinalDezoito.TagHelpers.output.cache
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Senai.Sistema.Carfel.ProjetoFinalDezoito.RazorCoreGenerate.cache
-C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Comentario\Cadastrar.g.cshtml.cs
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Main\about.g.cshtml.cs
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Main\faq.g.cshtml.cs
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Main\formulario.g.cshtml.cs
-C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MasterPagePrincipal.g.cshtml.cs
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Administrador.g.cshtml.cs
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Cadastrar.g.cshtml.cs
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Login.g.cshtml.cs
@@ -29,3 +27,7 @@ C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.Proje
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Senai.Sistema.Carfel.ProjetoFinalDezoito.Views.pdb
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Senai.Sistema.Carfel.ProjetoFinalDezoito.csproj.CopyComplete
 C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Main\principal.g.cshtml.cs
+C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MasterPageADMLogado.g.cshtml.cs
+C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MasterPageDeslogado.g.cshtml.cs
+C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Shared\MasterPageLogado.g.cshtml.cs
+C:\Users\22972804830\Documents\Projetos Csharp\AulaD1\Senai.Sistema.Carfel.ProjetoFinalDezoito\obj\Debug\netcoreapp2.1\Razor\Views\Comentario\Cadastrar.g.cshtml.cs

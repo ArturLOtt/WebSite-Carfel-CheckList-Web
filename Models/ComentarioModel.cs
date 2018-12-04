@@ -24,7 +24,7 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Models {
             // ConfigurarTexto();
         }
 
-// //Esse metodo para ver se da problema na hora de salavar comentarios
+// //Esse metodo para ver se da problema na hora de salvar comentarios
         // public void ConfigurarTexto()
         // {
         //     while (Descricao.Contains("\n"))

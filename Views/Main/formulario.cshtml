@@ -1,9 +1,16 @@
-
- 
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
 
 @{
     ViewBag.Title = "Carfel -- Formulário";
-    Layout = "MasterPagePrincipal";
 }
 
 @section styles{

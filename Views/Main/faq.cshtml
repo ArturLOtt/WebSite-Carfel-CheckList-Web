@@ -1,19 +1,22 @@
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
 @section styles{
     <link rel="stylesheet" href="/Css/style-faq.css">
     <link rel="stylesheet" href="/Css/style-form.css">
 }
 
-
-
 @{
     ViewBag.Title = "Carfel -- FAQ";
-    Layout = "MasterPagePrincipal";
 }
-
-
-
-<body>
-
 
     <main class="main-help">
 
@@ -24,7 +27,6 @@
                 <p> &emsp;&emsp;Comece selecionando um dos botões a seguir, ou se preferir, nos mande uma mensagem que responderemos
                     assim que possível!</p>
             </div>
-
 
             <form>
                 <div class="primeira-ajuda">
@@ -40,8 +42,6 @@
                     2. LOREM: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
                     "></textarea>
                 </div>
-
-
             </form>
 
 
@@ -54,10 +54,7 @@
                     <input class="botaozinho ajuda" type="submit" value="NÂO">
                 </form>
             </div>
-
-
         </div>
-
 
         <div id="chat">
             <header>
@@ -106,10 +103,4 @@
             </footer>
         </div>
 
-
-
     </main>
-
-</body>
-
-</html>

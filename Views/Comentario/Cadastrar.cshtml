@@ -1,66 +1,121 @@
 @using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
+@using Microsoft.AspNetCore.Http;
 
-@{
-ViewBag.Title = "Carfel - Cadastro de Comentarios";
-Layout = "MasterPagePrincipal";
+<!--{
+if(Context.Session.GetString("idUsuario") == null){
+Layout = "MasterPageDeslogado";
+} else {
+if (Context.Session.GetString("idUsuario") == "1" )
+{
+Layout = "MasterPageADMLogado";
+} else {
+Layout = "MasterPageLogado";
+}
+}-->
+
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
 }
 
-<h1>Area dos Comentários</h1>
+@{
+    ViewBag.Title = "Carfel -- Cadastro de Comentarios";
+}
+
+@section styles{
+<link rel="stylesheet" href="/Css/style-form.css">
+}
+
+<main>
+
+    <section id="comentarios" style="visibility:hidden;">
+        <h1>Area dos Comentários</h1>
+        <!-- <h2>ViewBag.Mensagem</h2> -->
+
+        <form method="POST" action="/Comentario/Cadastrar">
+            <!-- <textarea>//usuario</textarea> -->
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>E-mail</td>
+                    <td>Data de nascimento</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <form action="/Comentario/Cadastrar" method="POST">
+            <label>Fazer um novo comentario
+                <input type="text" name="depoimento" required>
+            </label>
+
+            <input type="submit" value="Enviar">
+        </form>
+
+        <!-- ViewBag.Mensagem -->
 
 
-<form method="POST" action="/Comentario/Cadastrar">
-       <!-- <textarea>//usuario</textarea> -->
-</form>
-
-<table>
-    <thead>
-        <tr>
-            <td>Nome</td>
-            <td>E-mail</td>
-            <td>Data de nascimento</td>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
 
 
+        foreach(ComentarioModel comentario in ViewData["Comentarios"] as List<ComentarioModel>){
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar"><img src="https://png2.kisspng.com/sh/a842adb43f8dd35c071d93865c0c99d1/L0KzQYm3VsI2N6F8iJH0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TfF3aaVmip9rdYPsfrb6k71kd551jeZucj32f7f7lBFzbV56i9d7LXH5ccXokr02amQ1UalvY3TpRrW7Ub42OWc4T6o7NEG4QoqCUcEzQWMASac7LoDxd1==/kisspng-computer-icons-avatar-business-computer-software-user-avatar-5b3097fcdf6d41.5163782415299112929152.png"
+                        alt=""></div>
+                <!-- Contenedor del Comentario -->
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name by-author"><a>comentario.nomeUsuario</a></h6>
+                        <span>comentario.DataCriacao</span>
+                        <i class="fa fa-times"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        comentario.Texto
+                    </div>
+                </div>
+            </div>
+            <br>
+            }
 
 
-<form action="/Comentario/Cadastrar" method="POST">
-    <label>Fazer um novo comentario
-        <input type="text" name="depoimento" required>
-    </label>
-
-    <input type="submit" value="Enviar">
-</form>
+    </section>
 
 
+    <section>
 
-@ViewBag.Mensagem
+                <div>
+                    <!-- Avatar -->
+                    <div class="comment-avatar"><img src="http://picsum.photos/392"
+                            alt="Usuario">
+                    </div>
+                    <!-- Contenedor del Comentario -->
+                    <form action="/Comentario" method="Post">
+                        <div>
+                            <h6><a>@Context.Session.GetString("nomeUsuario")</a></h6>
+                            <span>Data do Comentário</span>
+                            <i class="fa fa-times"></i>
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <textarea name="texto" class="formul textinho4"></textarea>
+                        <button type="submit" formul botaozinho btn>Enviar</button>
+                    </form>
+                </div>
 
+    </section>
 
+</main>
 
-
-<h3>Listagem de usuários</h3>
-
-@TempData["Mensagem"]
-
-<table>
-    <thead>
-        <tr>
-            <td>Nome</td>
-            <td>E-mail</td>
-            <td>Data de nascimento</td>
-        </tr>
-    </thead>
-    <tbody>
-        
-    </tbody>
-</table>
-
-@* @UsuarioModel razor *@
-
-<select>
-    
-</select>
+<p>Start</p>
+<p>Middle</p>
+<P>End</P>

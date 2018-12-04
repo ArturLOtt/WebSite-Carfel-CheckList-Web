@@ -1,16 +1,24 @@
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
 @section styles{
     <link rel="stylesheet" href="/Css/style-about.css">
 }
 
 @{
     ViewBag.Title = "Carfel -- Sobre Nós";
-    Layout = "MasterPagePrincipal";
 }
 
     <main>
-
         <div class="uber1">
-
             <div class="ub1sobre">
                 <img src="/imagens/sobre1.png" alt="valores">
                 <h2>Valores</h2>
@@ -23,7 +31,6 @@
 
         </div>
         <div class="uber2">
-
             <div class="skipan">
                 <span class="ub1sobre"> &emsp;&emsp; Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
                     ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
@@ -34,7 +41,6 @@
                     ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
                     ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </span>
             </div>
-
 
         </div>
         <div class="uber3">
@@ -48,13 +54,6 @@
                 aliquip ex ea commodo consequat. Duis autem vel eum Ut wisi enim ad minim veniam, quis nostrud exerci tation
                 ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum</p>
 
-
             <img src="/imagens/sobre3.png" alt="historia">
-
-
-
-
-
         </div>
-
     </main>

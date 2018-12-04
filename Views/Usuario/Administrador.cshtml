@@ -13,7 +13,6 @@
 
 @{
     ViewBag.Title = "Carfel -- Area do Administrador";
-    Layout = "MasterPagePrincipal";
 }
 
 <h1>Area do Administrador</h1>
@@ -56,6 +55,129 @@
         </option>
     }
 </select>
+
+
+
+<!--
+
+
+
+using CheckPoint.Sistema.Models
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/gerenciar.css">
+
+    <title>Check Point - A ferramenta de Marcação de Ponto do seu negócio</title>
+    <link rel="shortcut icon" href="/img/check-point-logo.png">
+</head>
+
+<body>
+    <header id="headerTopBar">
+        <div id="logoRedesSociais" class="sided">
+            <div class="logo">
+                <a href="/Pages/Home">
+                    <img src="/img/check-point-logo.png" alt="Check Point logo.">
+                </a>
+            </div>
+        </div>
+
+        <nav id="menuTop" class="top-bar flex-container hide">
+            <ul class="flex-container">
+                <li>
+                    <p class="regular" href="/Pages/Home">@ViewBag.UsuarioLogado</p>
+                </li>
+                <li>
+                    <a class="regular" href="/Pages/Home">Voltar ao site</a>
+                </li>
+                <li>
+                    <a class="regular" href="/Usuario/Cadastrar">Cadastrar Usuário</a>
+                </li>
+
+                <li>
+                    <a class="regular" href="/Usuario/Deslogar">Sair</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="banner" class="flex-container">
+            <div class="content">
+                <div class="check-point-name">
+                    <h1 class="text-border bold">Comentários<br>Em Espera</h1>
+                    <h3 class="text-border">Aceite ou recuse os comentários feitos em nosso site.</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="comentarios">
+            <h2>@ViewBag.Mensagem</h2>
+
+            <div class="comments-container">
+                @{
+                    List<ComentarioModel> ComentariosEmEspera = (List<ComentarioModel>) @ViewData["ComentariosEmEspera"];
+                }
+
+                @if (ComentariosEmEspera.Count == 0)
+                {
+                    <div class="comments-container-item">
+                        <h3>Não há comentários em espera</h3>
+                        <p>Não há mais o que fazer aqui.</p>
+                    </div>
+                } else {
+                    foreach(ComentarioModel comentario in @ViewData["ComentariosEmEspera"] as List<ComentarioModel>)
+                    {
+                        <form class="acept-reject" action="/Comentario/Gerenciar" method="POST">
+                          <div class="comments-container-item">
+                                <input type="hidden" name="commentId" value="@comentario.Id">
+                               <h3>@comentario.Usuario.Nome</h3>
+                               <h4>@comentario.DataCriacao</h4>
+                               <h4>Avaliação: comentario.Nota</h4>
+                                <p>comentario.Mensagem</p>
+                         </div>
+                         <label>
+                             Aceitar
+                              <button type="submit" name="choice" value="aceito"><i class="fas fa-thumbs-up"></i></button>
+                          </label>
+
+                           <label>
+                               Recusar
+                               <button type="submit" name="choice" value="recusado"><i class="fas fa-thumbs-down"></i></button>
+                         </label>
+                      </form>
+                    }
+                }
+            </div>
+        </section>
+    </main>
+
+    <div class="copyright">
+        <span>Desenvolvido por Ariel Paixão dos Santos</span>
+        <span>E-mail: arielpaixao10@gmail.com</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
+
+
+
+
+    -->
+
 
 
 

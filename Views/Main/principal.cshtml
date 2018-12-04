@@ -1,15 +1,21 @@
-@section styles{
-    
-    <link rel="stylesheet" href="/Css/style-princ.css">
+@if(@ViewBag.UsuarioLogado == null){
+    Layout = "MasterPageDeslogado";
+    } else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageADMLogado";
+    } else {
+        Layout = "MasterPageLogado";
+    }
 }
-   
 
-
+@section styles{
+    <link rel="stylesheet" href="/CSS/style-princ.css">
+}
+  
 @{
     ViewBag.Title = "Carfel -- Pagina Principal";
-    Layout = "MasterPagePrincipal";
 }
-
 
     <main>
 
