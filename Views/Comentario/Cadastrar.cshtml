@@ -1,28 +1,18 @@
 @using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
 @using Microsoft.AspNetCore.Http;
 
-<!--{
-if(Context.Session.GetString("idUsuario") == null){
+@if(Context.Session.GetString("emailUsuario") == null){
 Layout = "MasterPageDeslogado";
 } else {
-if (Context.Session.GetString("idUsuario") == "1" )
-{
-Layout = "MasterPageADMLogado";
-} else {
-Layout = "MasterPageLogado";
-}
-}-->
-
-@if(@ViewBag.UsuarioLogado == null){
-    Layout = "MasterPageDeslogado";
-    } else {
-    if (@ViewBag.AdminBool == true)
+    if (Context.Session.GetString("emailUsuario") == "23@23.com")
     {
         Layout = "MasterPageADMLogado";
     } else {
         Layout = "MasterPageLogado";
-    }
 }
+}
+
+
 
 @{
     ViewBag.Title = "Carfel -- Cadastro de Comentarios";
@@ -97,18 +87,12 @@ Layout = "MasterPageLogado";
                 <div>
                     <!-- Avatar -->
                     <div class="comment-avatar"><img src="http://picsum.photos/392"
-                            alt="Usuario">
+                         style="height:20px; width: 20px"   alt="Usuario">
                     </div>
                     <!-- Contenedor del Comentario -->
-                    <form action="/Comentario" method="Post">
-                        <div>
-                            <h6><a>@Context.Session.GetString("nomeUsuario")</a></h6>
-                            <span>Data do Comentário</span>
-                            <i class="fa fa-times"></i>
-                            <i class="fa fa-heart"></i>
-                        </div>
-                        <textarea name="texto" class="formul textinho4"></textarea>
-                        <button type="submit" formul botaozinho btn>Enviar</button>
+                    <form action="/Comentario/Cadastrar" method="Post">
+                        <input type="text" name="texto" class="formul textinho4">
+                        <input type="submit" value="Cadastrar" class="formul botaozinho btn">Enviar</button>
                     </form>
                 </div>
 
@@ -119,3 +103,36 @@ Layout = "MasterPageLogado";
 <p>Start</p>
 <p>Middle</p>
 <P>End</P>
+
+
+
+<!--
+<form method="POST" action="/Transacao/Cadastrar">
+    <label>
+        Descrição:
+        <input type="text" required="true">
+    </label>
+
+    <label>
+        Valor
+        <input type="text" name="valor"  required="true">
+    </label>
+
+    <label>
+        Tipo
+        <select name="tipo" required="true">
+            <option value="">Selecione</option>
+            <option value="despesa">Despesa</option>
+            <option value="receita">Receita</option>
+        </select>
+    </label>
+
+    <label>
+        Data da Transação
+        <input type="date" name="data"  required="true">
+    </label>
+
+    <input type="submit" value="Cadastrar">
+</form>
+
+-->

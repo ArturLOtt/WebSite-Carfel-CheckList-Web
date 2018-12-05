@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
+using Senai.Sistema.Carfel.ProjetoFinalDezoito.Repositorio;
 
 namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
     public class UsuarioController : Controller {
@@ -10,20 +11,6 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
 
         [HttpGet]
         public ActionResult Cadastrar () {
-
-            // string id = HttpContext.Session.GetString ("IdUsuario");
-
-            // if (id != null) {
-            //     int idInt = int.Parse (id);
-            //     UsuarioModel usuario = BuscarPorId (idInt);
-            //     // ViewBag.UsuarioId = usuario.Id;
-            //     ViewBag.UsuarioLogado = usuario.Nome;
-            //     ViewBag.AdminBool = usuario.Administrador;
-            // } else {
-            //     ViewBag.UsuarioLogado = null;
-            //     ViewBag.UsuarioId = null;
-            // }
-
             return View ();
         }
 
@@ -40,17 +27,15 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
 
         [HttpPost]
         public ActionResult Cadastrar (IFormCollection form) {
+            UsuarioModel usuario = new UsuarioModel (
+                nome:form["nome"],
+                email: form["email"],
+                senha: form["senha"],
+                cliente: true
+                );
 
-            UsuarioModel usuario = new UsuarioModel ();
-            usuario.Id = contador + 1;
-            usuario.Nome = form["nome"];
-            usuario.Email = form["email"];
-            usuario.Senha = form["senha"];
-            usuario.Cliente = true;
-
-            using (StreamWriter sw = new StreamWriter ("usuarioDB.txt", true)) {
-                sw.WriteLine ($"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};{usuario.Cliente};");
-            }
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+            usuarioRepositorio.Cadastrar(usuario);
 
             TempData["Mensagem"] = "Usuario cadastrado com sucesso!";
             ViewBag.Mensagem = "Usuário Cadastrado";
@@ -59,12 +44,12 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
 
         [HttpGet]
         public IActionResult Login () {
-
+// revisar codigo depois
             string id = HttpContext.Session.GetString ("IdUsuario");
 
             if (id != null) {
                 TempData["Mensagem"] = "Finalizando as atividades do usuario anterior. Preparando para a operação de Login de outro usuário";
-
+                TempData["UsuarioLogado"] = HttpContext.Session.GetString ("emailUsuario");
                 return RedirectToAction ("Cadastrar");
 
             } else {
@@ -86,6 +71,10 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
                     if (linha[2] == usuario.Email && linha[3] == usuario.Senha) {
                         // session armazena o email do usuario
                         HttpContext.Session.SetString ("emailUsuario", usuario.Email);
+
+                        // Save data to sessionStorage
+                        // sessionStorage.setItem ('key', 'value');
+
                         return RedirectToAction ("Cadastrar", "Comentario");
                     }
                 }
@@ -94,7 +83,6 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
             ViewBag.Mensagem = "Usuário Inválido";
             return View ();
         }
-
 
         //     [HttpPost]
         //     public IActionResult LoginAdmin(IFormCollection form){
@@ -131,6 +119,105 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
             HttpContext.Session.Clear ();
             return RedirectToAction ("Principal");
         }
-        
     }
 }
+
+/*
+
+
+using System.Collections.Generic;
+using Senai_Financas_Mvc_Web_master.Repositorios;
+
+namespace Senai.Financas.Web.Mvc.Controllers {
+    public class UsuarioController : Controller {
+
+        [HttpGet]
+        public IActionResult Login () {
+            return View ();
+        }
+
+        [HttpPost]
+        public IActionResult Login (IFormCollection form) {
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+            UsuarioModel usuario = usuarioRepositorio.Login(form["email"], form["senha"]);
+
+            if(usuario != null){
+                HttpContext.Session.SetString("idUsuario", usuario.Id.ToString());
+                return RedirectToAction ("Cadastrar", "Transacao");
+            }
+
+            ViewBag.Mensagem = "Usuário inválido";
+            return View ();
+        }
+
+        [HttpGet]
+        public IActionResult Listar () {
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+
+            ViewData["Usuarios"] = usuarioRepositorio.Listar();
+
+            return View ();
+        }
+
+        [HttpGet]
+        public IActionResult Excluir (int id) {
+            
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+            usuarioRepositorio.Excluir(id);
+
+            TempData["Mensagem"] = "Usuário excluído";
+
+            return RedirectToAction ("Listar");
+        }
+    
+        [HttpGet]
+        public IActionResult Editar(int id){
+
+            if(id == 0){
+                TempData["Mensagem"] = "Informe um usuário para editar";
+                return RedirectToAction("Listar");
+            }
+
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+            UsuarioModel usuario = usuarioRepositorio.BuscarPorId(id);
+
+            if(usuario != null){
+                ViewBag.Usuario = usuario;
+            } else {
+                TempData["Mensagem"] = "Usuário não encontrado";
+                return RedirectToAction("Listar");
+            }
+            
+            return View();
+        }
+    
+        [HttpPost]
+        public IActionResult Editar(IFormCollection form){
+            //Declara um objeto UsuarioModel e atribui os valores do form
+            UsuarioModel usuario = new UsuarioModel(
+                id: int.Parse(form["id"]),
+                nome: form["nome"],
+                email: form["email"],
+                senha: form["senha"],
+                dataNascimento: DateTime.Parse(form["dataNascimento"])
+            );
+
+            //Cria um objeto UsuarioRepositorio e edita
+            UsuarioRepositorio usuarioRepositorio = new UsuarioRepositorio();
+            usuarioRepositorio.Editar(usuario);
+
+            TempData["Mensagem"] = "Usuário editado";
+
+            return RedirectToAction("Listar");
+        }
+    }
+}
+
+
+
+
+
+ */
+
+
+

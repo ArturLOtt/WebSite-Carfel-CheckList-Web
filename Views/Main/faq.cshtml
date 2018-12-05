@@ -1,12 +1,15 @@
-@if(@ViewBag.UsuarioLogado == null){
-    Layout = "MasterPageDeslogado";
-    } else {
-    if (@ViewBag.AdminBool == true)
+@using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
+@using Microsoft.AspNetCore.Http;
+
+@if(Context.Session.GetString("emailUsuario") == null){
+Layout = "MasterPageDeslogado";
+} else {
+    if (Context.Session.GetString("emailUsuario") == "23@23.com")
     {
         Layout = "MasterPageADMLogado";
     } else {
         Layout = "MasterPageLogado";
-    }
+}
 }
 
 @section styles{

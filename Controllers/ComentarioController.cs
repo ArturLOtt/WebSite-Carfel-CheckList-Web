@@ -30,6 +30,7 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
             comentario.Aprovado = false;
 
             using (StreamWriter sw = new StreamWriter ("comentarioDB.txt", true)) {
+                // erro aqui...
                 sw.WriteLine ($"{comentario.Id};{comentario.Usuario.Nome};{comentario.Descricao};{comentario.DataCriacao};{comentario.Aprovado}");
             }
 

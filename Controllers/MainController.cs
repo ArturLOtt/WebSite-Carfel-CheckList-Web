@@ -7,6 +7,7 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
         public IActionResult About () {
             // ViewBag.UsuarioNome = HttpContext.Session.GetString ("UsuarioNome");
             // ViewBag.Tipo = HttpContext.Session.GetString ("Tipo");
+            
             return View ();
         }
 
