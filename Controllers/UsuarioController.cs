@@ -72,9 +72,6 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
                         // session armazena o email do usuario
                         HttpContext.Session.SetString ("emailUsuario", usuario.Email);
 
-                        // Save data to sessionStorage
-                        // sessionStorage.setItem ('key', 'value');
-
                         return RedirectToAction ("Cadastrar", "Comentario");
                     }
                 }
@@ -117,7 +114,7 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers {
         [HttpGet]
         public IActionResult Deslogar () {
             HttpContext.Session.Clear ();
-            return RedirectToAction ("Principal");
+            return RedirectToAction ("Principal", "Main");
         }
     }
 }

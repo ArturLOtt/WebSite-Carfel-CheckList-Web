@@ -4,85 +4,90 @@
 @if(Context.Session.GetString("emailUsuario") == null){
 Layout = "MasterPageDeslogado";
 } else {
-    if (Context.Session.GetString("emailUsuario") == "23@23.com")
-    {
-        Layout = "MasterPageADMLogado";
-    } else {
-        Layout = "MasterPageLogado";
+if (Context.Session.GetString("emailUsuario") == "23@23.com")
+{
+Layout = "MasterPageADMLogado";
+} else {
+Layout = "MasterPageLogado";
 }
 }
 
 
 @section styles{
-    <link rel="stylesheet" href="/CSS/style-princ.css">
+<link rel="stylesheet" href="/CSS/style-princ.css">
 }
-  
+
 @{
-    ViewBag.Title = "Carfel -- Pagina Principal";
+ViewBag.Title = "Carfel -- Pagina Principal";
 }
 
-    <main>
+<main>
 
-        <div class="standart">
+    <div class="standart">
 
-            <div class="product">
-                <div class="figure">
-                    <img src="/imagens/carfel-basic2.png" alt="plano checkpoint standart">
-                    <div class="caption">
-                        <div class="about">
-                            <h3>Standart Edition</h3>
-                            <p>R$29,99</p>
-                        </div>
-                        <!-- fim div about-->
+        <div class="product">
+            <div class="figure">
+                <img src="/imagens/carfel-basic2.png" alt="plano checkpoint standart">
+                <div class="caption">
+                    <div class="about">
+                        <h3>Standart Edition</h3>
+                        <p>R$29,99</p>
                     </div>
-                    <!-- fim div about -->
+                    <!-- fim div about-->
                 </div>
+                <!-- fim div about -->
             </div>
+        </div>
+
+    </div>
+
+
+    
+
+
+@*  
+    <div class="container">
+
+        <input type="radio" name="images" id="i1" checked>
+
+        <input type="radio" name="images" id="i2">
+
+        <input type="radio" name="images" id="i3">
+
+        <div class="slide_img" id="uno">
+            <img src="https://picsum.photos/100/100/?image=769">
+
+            <label for="i3" class="pre"></label>
+            <label for="i2" class="pos"></label>
 
         </div>
 
+        <div class="slide_img" id="duo">
+            <img src="https://picsum.photos/100/100/?image=786">
 
-        <div class="container">
-
-            <input type="radio" name="images" id="i1">
-            <input type="radio" name="images" id="i2">
-            <input type="radio" name="images" id="i3">
-            
-
-            <div class="slide_img" style="overflow-y: auto;">
-                <div id="one">
-                    <input type="text" name="comentador" disabled>
-                    <img src="https://picsum.photos/244" alt="usuario1">
-                    <label for="i3" class="pre"></label>
-                    <label for="i2" class="nxt"></label>
-                    <input type="text" name="comentario" disabled>
-                </div>
-            </div>
-            <div>
-                <div id="two">
-                    <input type="text" name="comentador" disabled>
-                    <img src="https://picsum.photos/274" alt="usuario2">
-                    <label for="i3" class="pre"></label>
-                    <label for="i2" class="nxt"></label>
-                    <input type="text" name="comentario" disabled>
-                </div>
-            </div>
-            <div>
-                <div id="three">
-                    <input type="text" name="comentador" disabled>
-                    <label for="i3" class="pre"></label>
-                    <label for="i2" class="nxt"></label>
-                    <img src="https://picsum.photos/149" alt="usuario3">
-                    <input type="text" name="comentario" disabled>
-                </div>
-            </div>
-
-            <div class="nav">
-                <label class="dots" id="dot1" for="i1"></label>
-                <label class="dots" id="dot2" for="i2"></label>
-                <label class="dots" id="dot3" for="i3"></label>
-            </div>
+            <label for="i1" class="pre"></label>
+            <label for="i3" class="pos"></label>
 
         </div>
 
-    </main>
+        <div class="slide_img" id="tre">
+            <img src="https://picsum.photos/100/100/?image=54">
+
+            <label for="i2" class="pre"></label>
+            <label for="i1" class="pos"></label>
+
+        </div>
+
+        <div class="nav">
+            <label class="dots" id="dot1" for="i1"></label>
+            <label class="dots" id="dot2" for="i2"></label>
+            <label class="dots" id="dot3" for="i3"></label>
+        </div>
+
+*@
+
+<div class="dha">
+<p>teste</p>
+    </div>
+
+</main>

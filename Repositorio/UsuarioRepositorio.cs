@@ -114,5 +114,86 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Repositorio {
         //     }
         // }
 
+/*
+
+        public UsuarioModel Editar (UsuarioModel usuario) {
+            string[] linhas = System.IO.File.ReadAllLines ("usuarios.csv");
+
+            for (int i = 0; i < linhas.Length; i++) {
+                if (string.IsNullOrEmpty (linhas[i])) {
+                    continue;
+                }
+                string[] dados = linhas[i].Split (';');
+
+                // Verifica se o id do formulario é igual ao da linha
+                if (usuario.Id.ToString () == dados[0]) {
+                    // ALtera os dados da linha
+                    linhas[i] = $"{usuario.Id};{usuario.Nome};{usuario.Email};{usuario.Senha};{usuario.DataNascimento}";
+                    break;
+                }
+            }
+
+            // Reescreve todas as linhas
+            System.IO.File.WriteAllLines ("usuarios.csv", linhas);
+
+            return usuario;
+        }
+
+        public void Excluir (int id) {
+            string[] linhas = System.IO.File.ReadAllLines ("usuarios.csv");
+
+            // Percorre as linhas do arquivo
+            for (int i = 0; i < linhas.Length; i++) {
+                // Separa as colunas da linha
+                string[] linha = linhas[i].Split (';');
+
+                //Verifica se o id da linha é o id passado
+                if (id.ToString () == linha[0]) {
+                    // Defino a linha como vazia
+                    linhas[i] = "";
+                    break;
+                }
+            }
+            // Reescrevo todo o arquivo csv 'atualizando' uma linha branca '' nova
+            System.IO.File.WriteAllLines ("usuarios.csv", linhas);
+        }
+
+        public List<UsuarioModel> Listar () {
+
+            List<UsuarioModel> lsUsuarios = new List<UsuarioModel> ();
+
+            string[] linhas = System.IO.File.ReadAllLines ("usuarios.csv");
+
+            UsuarioModel usuario;
+
+            foreach (var item in linhas) {
+
+                if (string.IsNullOrEmpty (item)) {
+                    // Retorna para o foreach
+                    continue;
+                }
+
+                string[] linha = item.Split (';');
+                usuario = new UsuarioModel (
+                    id: int.Parse (linha[0]),
+                    nome: linha[1], 
+                    dataNascimento: DateTime.Parse (linha[4]),
+                    senha: linha[3],
+                    email: linha[2]
+               );
+                
+                lsUsuarios.Add (usuario);
+            }
+            return lsUsuarios;
+        }
+
+
+
+
+ */
+
+
+
+
     }
 }

@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Sistema.Carfel.ProjetoFinalDezoito.Models;
+using Senai.Sistema.Carfel.ProjetoFinalDezoito.Repositorio;
 
 namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
 {
@@ -22,43 +23,30 @@ namespace Senai.Sistema.Carfel.ProjetoFinalDezoito.Controllers
 
         [HttpPost]
         public IActionResult Cadastrar (IFormCollection form) {
+
             ComentarioModel comentario = new ComentarioModel ();
-            comentario.Id = contador + 1;
-            comentario.Usuario = UsuarioAutenticado;
+            // comentario.Usuario = UsuarioAutenticado;
             comentario.Descricao = form["descricao"];
             comentario.DataCriacao = DateTime.Now;
             comentario.Aprovado = false;
+            comentario.NomeUsuario = HttpContext.Session.GetString("emailUsuario");
 
-            using (StreamWriter sw = new StreamWriter ("comentarioDB.txt", true)) {
-                // erro aqui...
-                sw.WriteLine ($"{comentario.Id};{comentario.Usuario.Nome};{comentario.Descricao};{comentario.DataCriacao};{comentario.Aprovado}");
-            }
+            ComentarioRepositorio comRepo = new ComentarioRepositorio();
+            comRepo.Criar(comentario);
 
-            // ViewBag.Mensagem = "Comentario cadastrada";
+            TempData["Mensagem"] = "Comentário cadastrado com sucesso!";
+            ViewBag.Mensagem = "Comentário Cadastrado";
+
+            // using (StreamWriter sw = new StreamWriter ("comentarioDB.txt", true)) {
+            //     sw.WriteLine ($"{comentario.Id};{HttpContext.Session.GetString("emailUsuario")};{comentario.Descricao};{comentario.DataCriacao};{comentario.Aprovado}");
+            // }
 
             return View ();
         }
     
-    
-    
-    
-    
-    
-    
-    
     /*
     
-    
-    
-
-
-
-using System;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 using Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios;
-using Senai.Projeto.Carfel.CheckPoint.MVC.Interfaces;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
 {
@@ -146,26 +134,14 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Controllers
     }
 }
 
+*/
 
 
-
-
-
-
-
-
-
-
-
-
+/*  
     
-    
-using System;
+
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Microsoft.AspNetCore.Http;
-using Senai.Projeto.Carfel.CheckPoint.MVC.Models;
 
 namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios {
     public class ComentarioRepositorio {
@@ -173,7 +149,6 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios {
 
             if (File.Exists ("comentarios.csv")) {
                 comentarioModel.Id = System.IO.File.ReadAllLines ("comentarios.csv").Length + 1;
-
             } else {
                 comentarioModel.Id = 1;
             }
@@ -183,7 +158,6 @@ namespace Senai.Projeto.Carfel.CheckPoint.MVC.Repositorios {
                 if (comentarioModel.Aprovado == false) {
                     escrever.WriteLine ($"{comentarioModel.Id};{comentarioModel.nomeUsuario};{comentarioModel.Texto};{comentarioModel.DataCriacao};0");
                 }
-
             }
             return comentarioModel;
         }

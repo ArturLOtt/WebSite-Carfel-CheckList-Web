@@ -140,14 +140,13 @@ transform: scale(0,1);
     transition: .5s;
     text-align: center;
     opacity: 0;
-    
 }
 
 .product:hover .about {
     opacity: 1;
-
 } 
 
+/* slide list start 
     .container {
         margin: 0 auto;
         margin-top: 20px;
@@ -168,14 +167,13 @@ transform: scale(0,1);
     .slide_img img{
         width: 100%;
         height: 100%;
-
     }
 
     #i1, #i2, #i3{
         display: none;
     }
 
-    .pre, .nxt{
+    .pre, .pos{
         width: 12%;
         height: 100%;
         position: absolute;
@@ -189,7 +187,7 @@ transform: scale(0,1);
         left: 0;
     }
 
-    .nxt{
+    .pos{
         right: 0;
     }
 
@@ -200,7 +198,6 @@ transform: scale(0,1);
         position: absolute;
         text-align: center;
         z-index: 99;
-
     }
 
     .dots{
@@ -218,9 +215,9 @@ transform: scale(0,1);
         z-index: -1;
     }
 
-    #i1:checked ~ #one,
-    #i2:checked ~ #two,
-    #i3:checked ~ #three{
+    #i1:checked ~ #uno,
+    #i2:checked ~ #duo,
+    #i3:checked ~ #tre{
         z-index: 9;
     }
 
@@ -229,6 +226,32 @@ transform: scale(0,1);
     #i3:checked ~ .nav #dot3{
         background: #fff;
     }
+
+ slide list end */
+
+/* novo slider começo*/
+ .dha{
+     width: 70%;
+     height: 400px;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     background-image: url(https://picsum.photos/100/100/?image=769);
+     background-size: 100% 100%;
+     animation: slider 9s infinite linear;
+ }
+    @keyframes slider{
+        0%{ background-image: url(https://picsum.photos/100/100/?image=769);
+        background-size: 100% 100%; }
+        35%{ background-image: url(https://picsum.photos/100/100/?image=786);
+        background-size: 100% 100%; }
+        70%{ background-image: url(https://picsum.photos/100/100/?image=54);
+        background-size: 100% 100%; }
+
+
+    }
+/* novo slider começo*/
 
     @media screen and (max-width:930) {
 

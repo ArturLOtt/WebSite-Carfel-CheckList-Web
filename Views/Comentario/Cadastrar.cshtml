@@ -12,8 +12,6 @@ Layout = "MasterPageDeslogado";
 }
 }
 
-
-
 @{
     ViewBag.Title = "Carfel -- Cadastro de Comentarios";
 }
@@ -24,7 +22,7 @@ Layout = "MasterPageDeslogado";
 
 <main>
 
-    <section id="comentarios" style="visibility:hidden;">
+    <section id="comentarios">
         <h1>Area dos Comentários</h1>
         <!-- <h2>ViewBag.Mensagem</h2> -->
 
@@ -81,58 +79,20 @@ Layout = "MasterPageDeslogado";
 
     </section>
 
-
     <section>
-
                 <div>
                     <!-- Avatar -->
                     <div class="comment-avatar"><img src="http://picsum.photos/392"
-                         style="height:20px; width: 20px"   alt="Usuario">
+                         style="height:50px; width: 50px"   alt="Usuario">
                     </div>
-                    <!-- Contenedor del Comentario -->
                     <form action="/Comentario/Cadastrar" method="Post">
-                        <input type="text" name="texto" class="formul textinho4">
-                        <input type="submit" value="Cadastrar" class="formul botaozinho btn">Enviar</button>
+                    <label>
+                        <input type="text" name="descricao" class="formul textinho4">
+                    </label>
+                    <label>
+                        <input type="submit" value="Cadastrar" class="formul botaozinho btn">
+                    </label>
                     </form>
                 </div>
-
     </section>
-
 </main>
-
-<p>Start</p>
-<p>Middle</p>
-<P>End</P>
-
-
-
-<!--
-<form method="POST" action="/Transacao/Cadastrar">
-    <label>
-        Descrição:
-        <input type="text" required="true">
-    </label>
-
-    <label>
-        Valor
-        <input type="text" name="valor"  required="true">
-    </label>
-
-    <label>
-        Tipo
-        <select name="tipo" required="true">
-            <option value="">Selecione</option>
-            <option value="despesa">Despesa</option>
-            <option value="receita">Receita</option>
-        </select>
-    </label>
-
-    <label>
-        Data da Transação
-        <input type="date" name="data"  required="true">
-    </label>
-
-    <input type="submit" value="Cadastrar">
-</form>
-
--->
