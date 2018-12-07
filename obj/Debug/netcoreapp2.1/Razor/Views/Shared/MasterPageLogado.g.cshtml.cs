@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"pt-BR\">\n");
             EndContext();
             BeginContext(36, 740, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef1933b59324895ba95d3a36532b66f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3cf129c0e93c47b0bd74088cfd4180bf", async() => {
                 BeginContext(42, 125, true);
                 WriteLiteral("\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <title>| Check Point - Bem-Vindo ");
                 EndContext();
@@ -88,7 +88,7 @@ Write(RenderSection("styles", required: false));
             WriteLiteral("\n");
             EndContext();
             BeginContext(777, 4705, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40072ad81df149e9b46af45244342a2f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a50e0b15f18e4477b5c39a2ee89ecf13", async() => {
                 BeginContext(783, 2217, true);
                 WriteLiteral(@"
     <!--<a href=""/Usuario/Listar"">Listar</a>

@@ -18,22 +18,24 @@ Layout = "MasterPageDeslogado";
 
 @section styles {
     <link rel="stylesheet" href="/CSS/login.css" type="text/css">
+    <link rel="stylesheet" href="/Css/style-form.css">
 }
 
-<main>
-<h1>Login</h1>
+<main  class="log">
 
-<form action="/Usuario/Login" method="POST">
-    <label>Email
-        <input type="text" name="email" required="true" placeholder="Insira seu email">
+
+<form action="/Usuario/Login" method="POST" class="form-wrap">
+<h2>Login</h2>
+    <label>
+        <input type="text" name="email" required="true" placeholder="Insira seu email" class="formul textinho3 loki">
     </label>
-    <label>Senha
-        <input type="password" name="senha" required="true" placeholder="Insira sua senha">
+    <label>
+        <input type="password" name="senha" required="true" placeholder="Insira sua senha" class="formul textinho3 loki">
     </label>
 
-    <input type="submit" value="Entrar">
-    <a href="\Usuario\Cadastrar">
-        <p>Cadastro de Usuario</p>
+    <input type="submit" value="Entrar" class="formul botaozinho btn">
+    <a href="\Usuario\Cadastrar" style="text-decoration: none;">
+        <h2 style="color: blue; font-size: .9rem; margin-right: -20px; text-decoration: none;">Cadastro de Usuario</h2>
     </a>
 </form>
 </main>
