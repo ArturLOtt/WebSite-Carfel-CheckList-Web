@@ -43,7 +43,7 @@ namespace AspNetCore
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"pt-BR\">\n");
             EndContext();
             BeginContext(36, 705, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "344efb161fe6411ab48c58899efaad6b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ef7e646520e4b4cbad5638f6e8eeb5e", async() => {
                 BeginContext(42, 267, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"" />
@@ -84,7 +84,7 @@ Write(RenderSection("styles", required: false));
             WriteLiteral("\n");
             EndContext();
             BeginContext(742, 4706, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d25d9a9b7b7a44ca92edd75f57e49986", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c886ea2c114242f3b16c3355c4e1dcd7", async() => {
                 BeginContext(748, 2218, true);
                 WriteLiteral(@"
     <!--<a href=""/Usuario/Listar"">Listar</a>

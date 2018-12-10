@@ -1,0 +1,31 @@
+table {
+    font-family: 'Arial';
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #00cccc;
+
+
+    tr:hover {
+        background: #f4f4f4;
+    }
+        
+        td {
+          color: #555;
+        }
+      
+    th, td {
+      color: #999;
+      border: 1px solid #eee;
+      padding: 12px 35px;
+      border-collapse: collapse;
+      padding: 15px;
+      text-align: left;
+    }
+    th {
+      background: #00cccc;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 12px;
+      
+  }

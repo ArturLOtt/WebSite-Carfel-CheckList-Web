@@ -1,9 +1,17 @@
-1;14141414;06/12/2018 09:04:09;False;14@14.com
-2;41;06/12/2018 09:07:29;False;14@14.com
-3;11441144;06/12/2018 09:08:49;False;14@14.com
-4;erererererer;06/12/2018 09:38:33;False;er@er.com
-5;      er      ;06/12/2018 09:38:51;False;er@er.com
-6;                                                                                          ;06/12/2018 09:39:02;False;er@er.com
-7;                                                                                          ;06/12/2018 09:42:18;False;er@er.com
+1;jantar;06/12/2018 09:04:09;False;14@14.com
+2;comida;06/12/2018 09:07:29;True;14@14.com;
+3;bife;06/12/2018 09:08:49;False;14@14.com
+4;batatinha;06/12/2018 09:38:33;True;er@er.com;
+
+
+
 8;Almoço;06/12/2018 09:45:51;False;er@er.com
-9;teste123;06/12/2018 09:55:17;False;er@er.com
+9;teste123;06/12/2018 09:55:17;True;er@er.com
+
+11;coca-cola;10/12/2018 11:00:32;True;er@er.com;
+12;sorvete;10/12/2018 11:00:46;False;er@er.com
+13;lasagna;10/12/2018 11:01:03;False;14@14.com
+14;macarrao;10/12/2018 11:05:01;True;14@14.com;
+15;strogonoff;10/12/2018 11:06:45;True;14@14.com;
+16;frango;10/12/2018 11:24:19;False;14@14.com
+17;beterraba;10/12/2018 11:24:54;False;14@14.com

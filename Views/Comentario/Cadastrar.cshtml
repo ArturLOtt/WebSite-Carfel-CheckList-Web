@@ -18,6 +18,8 @@ Layout = "MasterPageDeslogado";
 
 @section styles{
 <link rel="stylesheet" href="/Css/style-form.css">
+<link rel="stylesheet" href="/Css/comentario.css">
+<script src="/JS/number.js"></script>
 }
 
 <main>
@@ -30,61 +32,44 @@ Layout = "MasterPageDeslogado";
             <!-- <textarea>//usuario</textarea> -->
         </form>
 
-        <table>
-            <thead>
-                <tr>
-                    <td>Nome</td>
-                    <td>E-mail</td>
-                    <td>Data de nascimento</td>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-
-        <form action="/Comentario/Cadastrar" method="POST">
-            <label>Fazer um novo comentario
-                <input type="text" name="depoimento" required>
-            </label>
-
-            <input type="submit" value="Enviar">
-        </form>
-
-        <!-- ViewBag.Mensagem -->
-
-
-
-
-        foreach(ComentarioModel comentario in ViewData["Comentarios"] as List<ComentarioModel>){
-            <div class="comment-main-level">
-                <!-- Avatar -->
-                <div class="comment-avatar"><img src="https://png2.kisspng.com/sh/a842adb43f8dd35c071d93865c0c99d1/L0KzQYm3VsI2N6F8iJH0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TfF3aaVmip9rdYPsfrb6k71kd551jeZucj32f7f7lBFzbV56i9d7LXH5ccXokr02amQ1UalvY3TpRrW7Ub42OWc4T6o7NEG4QoqCUcEzQWMASac7LoDxd1==/kisspng-computer-icons-avatar-business-computer-software-user-avatar-5b3097fcdf6d41.5163782415299112929152.png"
-                        alt=""></div>
-                <!-- Contenedor del Comentario -->
-                <div class="comment-box">
-                    <div class="comment-head">
-                        <h6 class="comment-name by-author"><a>comentario.nomeUsuario</a></h6>
-                        <span>comentario.DataCriacao</span>
-                        <i class="fa fa-times"></i>
-                        <i class="fa fa-heart"></i>
+<table class="tabelinha">
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Descrição</th>
+            <th>Data de Criação</th>
+            <th>Imagem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewData["Comentarios"] as List<ComentarioModel>)
+        {
+            <tr>
+                <td>
+                    @item.NomeUsuario
+                </td>
+                <td>
+                    @item.Descricao
+                </td>
+                <td>
+                    @item.DataCriacao.ToShortDateString()
+                </td>
+                <td>
+                    <!-- Avatar -->
+                    <div class="avatar"><img src="#"
+                         style="height:50px; width: 50px; border-radius: 4px;"   alt="Usuario">
                     </div>
-                    <div class="comment-content">
-                        comentario.Texto
-                    </div>
-                </div>
-            </div>
-            <br>
-            }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 
     </section>
 
     <section>
                 <div>
-                    <!-- Avatar -->
-                    <div class="comment-avatar"><img src="http://picsum.photos/392"
-                         style="height:50px; width: 50px"   alt="Usuario">
-                    </div>
                     <form action="/Comentario/Cadastrar" method="Post">
                     <label>
                         <input type="text" name="descricao" class="formul textinho4">
