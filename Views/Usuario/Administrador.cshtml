@@ -12,50 +12,60 @@ Layout = "MasterPageDeslogado";
 }
 }
 
+@section styles{
+<link rel="stylesheet" href="/CSS/style-form.css">
+<link rel="stylesheet" href="/CSS/comentario.css">
+<script src="/JS/number.js"></script>
+}
+
 @{
     ViewBag.Title = "Carfel -- Area do Administrador";
 }
 
-<h1>Area do Administrador</h1>
+<div class="table-title">
+<h3>Area do Administrador</h3>
 
 <form method="POST" action="/Usuario/Administrador">
 
 
-
-<table>
+<table class="table-fill" style="margin: 10% 0% 20% -10%;">
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Data de Criação</th>
-            <th>Ações</th>
+        <tr class="ttr">
+            <th class="tth">Id</th>
+            <th class="tth">Nome</th>
+            <th class="tth">Descrição</th>
+            <th class="tth">Data de Criação</th>
+            <th class="tth">Aprovar</th>
+            <th class="tth">Excluir</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in ViewData["Comentarios"] as List<ComentarioModel>)
         {
-            <tr>
-                <td>
+            <tr class="ttr">
+                <td class="text-left">
                     @item.Id
                 </td>
-                <td>
+                <td class="text-left">
                     @item.NomeUsuario
                 </td>
-                <td>
+                <td class="text-left">
                     @item.Descricao
                 </td>
-                <td>
+                <td class="text-left">
                     @item.DataCriacao.ToShortDateString()
                 </td>
-                <td>
-                    <a href="/Comentario/Excluir?id=@item.Id">Excluir</a>
-                    <a href="/Comentario/Aprovar?id=@item.Id">Editar</a>
+                <td class="text-left">
+                    <a href="/Comentario/Excluir?id=@item.Id" class="formul botaozinho ">Excluir</a>
+                </td>
+                <td class="text-left">
+                    <a href="/Comentario/Aprovar?id=@item.Id" class="formul botaozinho ">Aprovar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+</div>
 
 
 

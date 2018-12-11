@@ -1,8 +1,15 @@
 .log {
-    height: 50%;
+    height: 100vh;
 }
-
 
 .loki {
     margin: 0px 0px 0px -15%; 
+}
+
+.log-wrap{
+    margin-top: 5%;
+}
+
+.lbl-siz{
+    font-size: 1.3rem;
 }

@@ -1,31 +1,140 @@
-table {
-    font-family: 'Arial';
-    margin: 25px auto;
+
+div.table-title {
+    display: block;
+   margin: auto;
+   max-width: 600px;
+   padding:5px;
+   width: 100%;
+ }
+ 
+ .table-title h3 {
+    color: #fafafa;
+    font-size: 2.3rem;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+ }
+
+ .table-fill {
+    background: white;
+    border-radius:3px;
     border-collapse: collapse;
-    border: 1px solid #eee;
-    border-bottom: 2px solid #00cccc;
-
-
-    tr:hover {
-        background: #f4f4f4;
-    }
-        
-        td {
-          color: #555;
-        }
-      
-    th, td {
-      color: #999;
-      border: 1px solid #eee;
-      padding: 12px 35px;
-      border-collapse: collapse;
-      padding: 15px;
-      text-align: left;
-    }
-    th {
-      background: #00cccc;
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 12px;
-      
+    height: 320px;
+    margin: auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
   }
+
+  .tth {
+    color:#D5DDE5;;
+    background:#086A7A;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size:23px;
+    font-weight: 100;
+    padding:24px;
+    text-align:left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align:middle;
+  }
+  
+  .tth:first-child {
+    border-top-left-radius:3px;
+  }
+   
+  .tth:last-child {
+    border-top-right-radius:3px;
+    border-right:none;
+  }
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+.ttr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#E5F5F6;
+}
+ 
+.ttr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+
+
+
+
+/* 
+terminar a customização do administrador
+mudar o principal, tentar colocar tabela lá dentro
+mudar o principal (remover o slide caso ele nao funcione)
+ */

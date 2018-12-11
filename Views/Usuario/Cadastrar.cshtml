@@ -18,26 +18,30 @@ Layout = "MasterPageDeslogado";
 
 @section styles {
     <link rel="stylesheet" href="/CSS/style-cadastrar.css">
+    <link rel="stylesheet" href="/Css/style-form.css">
+    <link rel="stylesheet" href="/Css/login.css">
 }
 
-<main>
-<h1>Formulario de Cadastro</h1>
+<main  style="height: 100vh">
+    <div style="margin: 5% 0px 0px 5%; padding: 0px 0px 2% 0px;">
+<h2 style="font-family: 'Work Sans', sans-serif; margin: 0 0 0 40%;">Formulario de Cadastro</h2>
 
-<form action="/Usuario/Cadastrar" method="POST">
-    <label>Nome
-        <input type="text" name="nome" required>
+<form action="/Usuario/Cadastrar" method="POST" class="form-wrap" style="font-family: 'Work Sans', sans-serif;">
+    <label class="lbl-siz" style="font-size: 1.3rem;">Nome
+        <input type="text" name="nome" required class="formul textinho3 ">
     </label>
 
-    <label>Email
-        <input type="email" name="email" required>
+    <label class="lbl-siz" style="font-size: 1.3rem;">Email
+        <input type="email" name="email" required class="formul textinho3 ">
     </label>
 
-    <label>Senha
-        <input type="password" name="senha" required>
+    <label class="lbl-siz" style="font-size: 1.3rem;">Senha
+        <input type="password" name="senha" required class="formul textinho3 ">
     </label>
 
-    <input type="submit" value="Enviar">
+    <input type="submit" value="Enviar" class="formul botaozinho btn">
 </form>
+</div>
 
 @ViewBag.Mensagem
 

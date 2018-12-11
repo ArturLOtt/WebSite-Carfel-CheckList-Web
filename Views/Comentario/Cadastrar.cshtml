@@ -17,44 +17,42 @@ Layout = "MasterPageDeslogado";
 }
 
 @section styles{
-<link rel="stylesheet" href="/Css/style-form.css">
-<link rel="stylesheet" href="/Css/comentario.css">
+<link rel="stylesheet" href="/CSS/style-form.css">
+<link rel="stylesheet" href="/CSS/comentario.css">
 <script src="/JS/number.js"></script>
 }
 
 <main>
 
     <section id="comentarios">
-        <h1>Area dos Comentários</h1>
-        <!-- <h2>ViewBag.Mensagem</h2> -->
 
-        <form method="POST" action="/Comentario/Cadastrar">
-            <!-- <textarea>//usuario</textarea> -->
-        </form>
+        <form method="POST" action="/Comentario/Cadastrar"></form>
 
-<table class="tabelinha">
+<div class="table-title">
+        <h3 style="font-family: 'Work Sans', sans-serif; color: black; margin: 10% 0px 10% 15%;";>Area dos Comentários</h3>
+<table class="table-fill">
     <thead>
         <tr>
-            <th>Usuario</th>
-            <th>Descrição</th>
-            <th>Data de Criação</th>
-            <th>Imagem</th>
+            <th class="tth" >Usuario</th>
+            <th class="tth" >Descrição</th>
+            <th class="tth" >Data de Criação</th>
+            <th class="tth" >Imagem</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in ViewData["Comentarios"] as List<ComentarioModel>)
         {
             <tr>
-                <td>
+                <td class="text-left">
                     @item.NomeUsuario
                 </td>
-                <td>
+                <td class="text-left">
                     @item.Descricao
                 </td>
-                <td>
+                <td class="text-left">
                     @item.DataCriacao.ToShortDateString()
                 </td>
-                <td>
+                <td class="text-left">
                     <!-- Avatar -->
                     <div class="avatar"><img src="#"
                          style="height:50px; width: 50px; border-radius: 4px;"   alt="Usuario">
@@ -64,20 +62,24 @@ Layout = "MasterPageDeslogado";
         }
     </tbody>
 </table>
-
+</div>
 
     </section>
 
-    <section>
+    <section style="margin: 0 5% 0 5%">
+        <h2 style="font-family: 'Work Sans', sans-serif; color: black; margin: 5% 0px 5% 35%; font-size: 1.9rem;">Cadastre um Comentário</h2>
                 <div>
                     <form action="/Comentario/Cadastrar" method="Post">
+                   <div style="margin: 0 0 0 30%;">
                     <label>
                         <input type="text" name="descricao" class="formul textinho4">
                     </label>
                     <label>
-                        <input type="submit" value="Cadastrar" class="formul botaozinho btn">
+                        <input type="submit" value="Cadastrar" class="formul botaozinho btn" style="margin: 5% 0% 5% 15%; display: block;">
                     </label>
+                    </div>
                     </form>
                 </div>
     </section>
+
 </main>

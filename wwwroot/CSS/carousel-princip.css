@@ -1,0 +1,91 @@
+.containerx {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0 0 40px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+ul li {
+  list-style: none;
+  margin: 0 0 40px;
+}
+
+ul li .slidex {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform: rotateY(90deg);
+  transform-origin: left;
+}
+
+ul li input [type="radio"]{
+  position: relative;
+  z-index: 1;
+  height: 20px;
+  width: 20px;
+}
+
+ul li input[type="radio"]:checked ~ .slidex{
+  transition: transform 0.5s;
+  transform: rotateY(odeg);
+  transform-origin: right;
+
+}
+
+ul li .slidex .contentx{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, .9);
+  padding: 40px;
+}
+
+ul li .slidex .contentx h2{
+  margin: 0;
+  padding: 0;
+  font-size: 42px;
+}
+
+ul li .slidex .contentx p {
+  font-size: 18px;
+}
+
+ul li .slidex img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+ul li input[type="radio"]:checked ~.slidex img{
+  animation: animate 40s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1);
+  }
+
+}
+

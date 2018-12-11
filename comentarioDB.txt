@@ -13,5 +13,5 @@
 13;lasagna;10/12/2018 11:01:03;False;14@14.com
 14;macarrao;10/12/2018 11:05:01;True;14@14.com;
 15;strogonoff;10/12/2018 11:06:45;True;14@14.com;
-16;frango;10/12/2018 11:24:19;False;14@14.com
-17;beterraba;10/12/2018 11:24:54;False;14@14.com
+16;frango;10/12/2018 11:24:19;True;14@14.com;
+17;beterraba;10/12/2018 11:24:54;True;14@14.com;
