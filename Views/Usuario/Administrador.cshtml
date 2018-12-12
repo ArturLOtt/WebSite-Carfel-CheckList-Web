@@ -23,7 +23,7 @@ Layout = "MasterPageDeslogado";
 }
 
 <div class="table-title">
-<h3>Area do Administrador</h3>
+<h3 style="color: black">Area do Administrador</h3>
 
 <form method="POST" action="/Usuario/Administrador">
 
@@ -56,17 +56,16 @@ Layout = "MasterPageDeslogado";
                     @item.DataCriacao.ToShortDateString()
                 </td>
                 <td class="text-left">
-                    <a href="/Comentario/Excluir?id=@item.Id" class="formul botaozinho ">Excluir</a>
+                    <a href="/Comentario/Excluir?id=@item.Id" class="formul botaozinho" style="background: #B11010; text-decoration: none; color: white;">Excluir</a>
                 </td>
                 <td class="text-left">
-                    <a href="/Comentario/Aprovar?id=@item.Id" class="formul botaozinho ">Aprovar</a>
+                    <a href="/Comentario/Aprovar?id=@item.Id" class="formul botaozinho" style="background: #11B50E; text-decoration: none; color: white;">Aprovar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 </div>
-
 
 
 @ViewBag.Mensagem
